@@ -105,7 +105,7 @@ def scrape():
         column1_lst.append(i.text[0:-1]) # using 0:-1 to omit the ":" that's at the end of each row element
         
     for i in facts_table.find_all('td', class_ = "column-2"):
-        column2_lst.append(i.text) # using 0:-1 to omit the ":" that's at the end of each row element
+        column2_lst.append(i.text)
 
     facts_df = pd.DataFrame(
     {'Metric': column1_lst,
