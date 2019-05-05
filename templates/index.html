@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    table, th, td {
+        border: 1px solid black;
+        text-align: center;
+    }
+    .card {        
+        border: solid 1px black !important;
+    }
+</style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="container">
+      <div class = "row">
+          <div class="col-md-12">
+          <h2> <strong>Latest Mars News</strong> </h2>
+          <h3> <strong>{{ render_var.News_Title }}</strong> </h3>
+          <p>{{ render_var.News_Teaser }}</p>
+          <br>
+          </div>
+      </div>
+
+      <div class = "row">
+
+          <div class="col-md-9">
+            <h2><strong>Featured Mars Image</strong></h2>
+            <img src="{{ render_var.Featured_Image }}" alt="Featured Image" class="img-responsive" style="width:100%" >              
+            </div>
+
+          <div class="col-md-3">
+              <h4><strong>Current Weather on Mars</strong></h4>
+              <div class="card">
+                  <div class="card-body">                      
+                      <p>{{ render_var.Mars_Weather }}</p>
+                    </div>
+                </div>
+
+            <table>
+                <h4><strong>Mars Facts</strong></h4>
+                <thead>          
+                  <th>Metric</th>
+                  <th>Data</th>
+                  <tbody>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[0]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[0]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[1]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[1]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[2]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[2]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[3]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[3]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[4]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[4]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[5]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[5]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[6]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[6]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[7]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[7]['Data'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>{{ render_var.Mars_Facts[2]['Metric'] }}</td>
+                      <td>{{ render_var.Mars_Facts[2]['Data'] }}</td>
+                    </tr>
+                </tbody>
+                </thead>
+              </table>
+
+          </div>
+      </div>
+
+    <div class="container" align="center">
+
+      <div class = "row">
+
+          <div class="col-md-12">
+            <h2><strong>Mars Hemispheres</strong></h2>
+            <hr>     
+            </div>
+          </div>
+
+      <div class="row">
+          <div class="col-md-6" align="center">            
+            <div class="thumbnail">
+                <img src="{{ render_var.Mars_Hemispheres[0]['img_url'] }}" alt="Featured Image" class="img-responsive" style="width:100%">
+                <br>
+            <h3>{{ render_var.Mars_Hemispheres[0]['title'] }}</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" align="center">            
+            <div class="thumbnail">
+                <img src="{{ render_var.Mars_Hemispheres[1]['img_url'] }}" alt="Featured Image" class="img-responsive" style="width:100%">
+                <br>
+            <h3>{{ render_var.Mars_Hemispheres[1]['title'] }}</h3>
+            </div>
+          </div>
+
+        </div>
+
+      <div class="row">
+          <div class="col-md-6" align="center">            
+            <div class="thumbnail">
+                <img src="{{ render_var.Mars_Hemispheres[2]['img_url'] }}" alt="Featured Image" class="img-responsive" style="width:100%">
+                <br>
+            <h3>{{ render_var.Mars_Hemispheres[2]['title'] }}</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" align="center">            
+            <div class="thumbnail">
+                <img src="{{ render_var.Mars_Hemispheres[3]['img_url'] }}" alt="Featured Image" class="img-responsive" style="width:100%">
+                <br>
+            <h3>{{ render_var.Mars_Hemispheres[3]['title'] }}</h3>
+            </div>
+          </div>
+
+        </div>
+
+
+  </div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+
+</body>
+
+</html>
